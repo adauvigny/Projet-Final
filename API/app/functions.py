@@ -20,6 +20,16 @@ MODEL_FILEPATH_B = os.path.join('API','app', 'models', 'predictB.joblib')
 a ={"id":1, "ball_pos_x": -56.27}
 
 
+def predict_scores(input_array):
+    scores = []
+    for i in range(len(input_array)):
+        dictionary = input_array[i]
+        prepared_data = data_treatment(dictionary)
+        score = predict(prepared_data)
+        scores.append({'id':dictionary['id'], "team_A_scoring_within_10sec": score[0], "team_B_scoring_within_10sec": score[1]})
+    return scores
+
+
 def data_treatment(input_data):
     #params has to be a dictionary with the 55 features - well ordered
     #{"id":1, "ball_pos_x": -56.27, ...}
