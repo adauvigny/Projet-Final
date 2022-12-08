@@ -59,8 +59,10 @@ def predict_scores(input_array):
 
     d = {'id': input_data.loc[:,'id'].values.tolist(), 'team_A_scoring_within_10sec': A_pred, 'team_B_scoring_within_10sec': B_pred}
     submission = pd.DataFrame(d)
+    formatted_submission = submission.to_json(orient="records")
+    print(formatted_submission)
+    return formatted_submission
 
-    print(submission)
 
 predict_scores(a)
 

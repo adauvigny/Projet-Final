@@ -15,3 +15,9 @@ MODEL_FILEPATH_B = os.path.join('API', 'app','models', 'predictB.joblib')
 
 
 app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def index():
+    return "Welcome to the basic Flask app."
+
+
