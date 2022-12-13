@@ -18,13 +18,14 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return "Welcome to the basic Flask app."
+    return "Welcome to the app by Theophile & Alex"
 
 
 @app.route('/predict', methods=['GET'])
 def get_score():
     score = random.uniform(0, 1)
     return jsonify({"score": score})
+
 
 @app.route('/predict', methods=['POST'])
 def get_scores():
@@ -34,4 +35,6 @@ def get_scores():
     return scores
 
 
+response = requests.get('http://127.0.0.1:5000/predict')
+print(response.text)
 
