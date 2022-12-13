@@ -6,14 +6,17 @@ from flask import Flask, request, jsonify
 import random
 import pandas as pd
 import numpy as np
+import joblib
 from joblib import dump, load
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.impute import SimpleImputer
 from numpy import nan 
 
 #DATA_FILEPATH = os.path.join('API', 'data', 'cs-training.csv')
-MODEL_FILEPATH_A = os.path.join('API','app', 'models', 'predictA.joblib')
-MODEL_FILEPATH_B = os.path.join('API','app', 'models', 'predictB.joblib')
+
+ROOT_APP_FOLDER = "/opt/app"
+MODEL_FILEPATH_A = os.path.join(ROOT_APP_FOLDER, 'models', 'predictA.joblib')
+MODEL_FILEPATH_B = os.path.join(ROOT_APP_FOLDER, 'models', 'predictB.joblib')
 
 #features engineering 
 
