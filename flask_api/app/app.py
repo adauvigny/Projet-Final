@@ -8,9 +8,14 @@ import pandas as pd
 from joblib import dump, load
 from sklearn.ensemble import GradientBoostingClassifier
 import functions
+import joblib
+
 #DATA_FILEPATH = os.path.join('API', 'data', 'cs-training.csv')
-MODEL_FILEPATH_A = os.path.join('API', 'app','models', 'predictA.joblib')
-MODEL_FILEPATH_B = os.path.join('API', 'app','models', 'predictB.joblib')
+ROOT_APP_FOLDER = "/opt/app"
+
+
+MODEL_FILEPATH_A = os.path.join(ROOT_APP_FOLDER,'models', 'predictA.joblib')
+MODEL_FILEPATH_B = os.path.join(ROOT_APP_FOLDER,'models', 'predictB.joblib')
 
 
 
