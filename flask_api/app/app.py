@@ -39,7 +39,3 @@ def get_scores():
     scores = functions.predict_scores(payload)
     return scores
 
-
-response = requests.get('http://127.0.0.1:5000/predict')
-print(response.text)
-
